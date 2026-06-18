@@ -108,6 +108,7 @@ pub mod text_loader;
 pub mod s3_loader;
 
 use anyhow::{Error, Result};
+#[allow(unused_imports)]
 use config::{
     ImageEmbedConfig, TextEmbedConfig, VideoEmbedConfig, DEFAULT_VIDEO_BATCH_SIZE,
     DEFAULT_VIDEO_FRAME_STEP,

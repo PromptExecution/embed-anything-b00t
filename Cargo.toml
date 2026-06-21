@@ -1,13 +1,22 @@
+[workspace]
 resolver = "2"
+members = [
+    "rust",
+    "server",
+    "python",
+    "processors",
+]
 
-strum = "0.27.1"
-strum_macros = "0.27.1"
-
-
+[workspace.package]
+version = "0.7.0"
+edition = "2024"
+license = "Apache-2.0"
+description = "Embed anything at lightning speed"
+repository = "https://github.com/PromptExecution/embed-anything-b00t"
+authors = ["Akshay Ballal <arballal95@gmail.com>"]
 
 [profile.dev]
 rpath = true
 
 [profile.release]
 rpath = true
-

@@ -1,7 +1,7 @@
 [package]
 name = "processors-rs"
 version = "0.7.0"
-edition = "2021"
+edition = "2024"
 license = "Apache-2.0"
 description = "Document processors for embed_anything"
 repository = "https://github.com/PromptExecution/embed-anything-b00t"

@@ -1,11 +1,11 @@
 [package]
 name = "processors-rs"
-version.workspace = true
-edition.workspace = true
-license.workspace = true
-description.workspace = true
-repository.workspace  = true
-authors.workspace = true
+version = "0.7.2"
+edition = "2021"
+license = "Apache-2.0"
+description = "Document processors for embed_anything"
+repository = "https://github.com/PromptExecution/embed-anything-b00t"
+authors = ["Akshay Ballal <arballal95@gmail.com>"]
 readme = "README.md"
 
 [dependencies]
@@ -23,7 +23,7 @@ htmd = "0.1.6"
 regex = "1.10.3"
 
 # PDF processing
-pdf-extract = {workspace = true}
+pdf-extract = "0.9.0"
 docx-parser = "0.1.1"
 docx-rust = "=0.1.8"
 pdf2image = "0.1.3"

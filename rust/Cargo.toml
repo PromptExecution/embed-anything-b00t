@@ -1,16 +1,16 @@
 [package]
 name = "embed_anything"
-version.workspace = true
-edition.workspace = true
-license.workspace = true
-description.workspace = true
-repository.workspace  = true
-authors.workspace = true
+version = "0.7.2"
+edition = "2021"
+license = "Apache-2.0"
+description = "Embed anything at lightning speed"
+repository = "https://github.com/PromptExecution/embed-anything-b00t"
+authors = ["Akshay Ballal <arballal95@gmail.com>"]
 readme = "../README.md"
 
 [dependencies]
 # File preprocessing
-processors-rs = { workspace = true }
+processors-rs = { path = "../processors", version = "=0.7.2" }
 
 # Data Serialization
 serde = { version = "1.0.196", features = ["derive"] }
@@ -36,9 +36,9 @@ tracing = "0.1.41"
 
 # Hugging Face Libraries
 hf-hub = { version = "1.0.0", default-features = false, features = ["blocking"] }
-candle-nn = { workspace = true }
-candle-transformers = { workspace = true }
-candle-core = { workspace = true }
+candle-nn = "0.11.0"
+candle-transformers = "0.11.0"
+candle-core = "0.11.0"
 
 # Error Handling
 anyhow = "1.0.98"
@@ -59,14 +59,14 @@ byteorder = "1.5.0"
 
 ndarray = "0.16.1"
 pdf2image = "0.1.2"
-strum = {workspace = true}
+strum = "0.27.1"
 base64 = "0.22.1"
 # Optional Dependency
 intel-mkl-src = { version = "0.8.1", optional = true }
 accelerate-src = { version = "0.3.2", optional = true }
 indicatif = "0.18.2"
 half = "2.4.1"
-candle-flash-attn = { workspace = true, optional = true }
+candle-flash-attn = { version = "0.11.0", optional = true }
 model2vec-rs = "0.2.1"
 
 # Logging

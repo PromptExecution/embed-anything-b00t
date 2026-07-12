@@ -110,8 +110,10 @@ pub mod s3_loader;
 
 use anyhow::{Error, Result};
 use config::{
-    ImageEmbedConfig, TextEmbedConfig, VideoEmbedConfig  
+    ImageEmbedConfig, TextEmbedConfig, VideoEmbedConfig,
 };
+#[cfg(feature = "video")]
+use config::{DEFAULT_VIDEO_BATCH_SIZE, DEFAULT_VIDEO_FRAME_STEP};
 use embeddings::{
     embed::{EmbedData, EmbedImage, Embedder, TextEmbedder, VisionEmbedder},
     get_text_metadata,

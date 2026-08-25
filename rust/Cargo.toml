@@ -67,7 +67,17 @@ accelerate-src = { version = "0.3.2", optional = true }
 indicatif = "0.18.2"
 half = "2.4.1"
 candle-flash-attn = { version = "0.11.0", optional = true }
-model2vec-rs = "0.2.1"
+# 🤓 b00t: default-features=false — upstream default ["onig"] bundles
+#    tokenizers/esaxx_fast (unrelated to onig), which activates esaxx-rs's
+#    "cpp" feature and pulls in a C++ toolchain (libstdc++) purely to build
+#    a suffix-array routine used ONLY by tokenizers' Unigram *trainer*
+#    (unigram/trainer.rs) — dead code for us, since embed_anything only ever
+#    loads pretrained tokenizer.json files (Tokenizer::from_file/from_pretrained),
+#    never trains one. This is what broke musl cross-compilation (Debian/Ubuntu
+#    musl-tools is C-only, no libstdc++-for-musl) and forced an Alpine-container
+#    build detour for b00t-historian. model2vec-rs does its own HF downloads via
+#    `hf_hub` directly, not via tokenizers' http feature, so nothing here is lost.
+model2vec-rs = { version = "0.2.1", default-features = false }
 
 # Logging
 log = "0.4"
